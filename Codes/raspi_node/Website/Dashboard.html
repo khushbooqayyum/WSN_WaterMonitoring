@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Dashboard</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
+    <script type="text/javascript" src="scripts.js?newversion"></script>
+    <script type="text/javascript" src="scripts/Chart.bundle.js"></script>
+    <script type="text/javascript" src="scripts/Chart.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark justify-content-between">
+    <a class="navbar-brand" href="#">H<sub>2</sub>O Sense</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="Dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="info.html">Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </ul>
+        <form class="form-inline mx-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container-fluid"  >
+    <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+        <ul class="nav nav-pills flex-column" id="accordion" >
+            <li class="nav-item">
+                <a class="nav-link active" id="Connected_devices" href="#" onclick="Deviceskeypress()" data-toggle="collapse"
+                   data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+                    Devices
+                    <span class="sr-only">(current)</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="Connected_devices" data-parent="#accordion">
+                    <ul class="">
+                        <li class="nav-item">
+                            <a class="nav-link " id="Device_1" href="#Device_1_data">Device 1
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="Device_2" href="#Device_2_data">Device 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="Device_3" href="#Device_3_data">Device 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="Device_4" href="#Device_4_data">Device 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" id="Plots" href="#" onclick="plotkeypress()" data-toggle="collapse"
+                   data-target="#collapsetwo" aria-expanded="false" aria-controls="collapsetwo" >
+                    Instantaneous Plots
+                </a>
+
+                <div id="collapsetwo" class="collapse" aria-labelledby="Plots" data-parent="#accordion" >
+                    <ul class="">
+                        <li class="nav-item">
+                            <a class="nav-link " id="Deviceplot_1" href="#Device_1_data"> Temperature Plot
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="Deviceplot_2" href="#TimeStamp_dev1"> PH Plot</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="Deviceplot_3" href="#TimeStamp_dev2">Salinity Plot</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="Deviceplot_4" href="#TimeStamp_dev3">Dissolved oxygen Plot </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="Files" role="button" onclick="Files_keypress()">View Data In Plots</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="Data_Disp" role="button" onclick="Disp_keypress()">View Raw Data</a>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link" href="#" id="Settings" role="button" onclick="Setting_keypress()">Settings</a>
+            </li>
+
+        </ul>
+
+        <!--        <ul class="nav nav-pills flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Nav item</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Nav item again</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">One more nav</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Another nav item</a>
+                  </li>
+                </ul> -->
+
+        <!--        <ul class="nav nav-pills flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Nav item again</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">One more nav</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Another nav item</a>
+                  </li>
+                </ul>-->
+    </nav>
+    <span id="Device_1_data"></span>
+
+    <div class="row">
+
+        <main id="main_page" role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+            <div class="alert alert-warning alert-dismissible fade show col-md-10" id= "warning" role="alert">
+                  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+
+
+
+
+            <h1>Device 1 </h1>
+
+
+            <section class="row text-center placeholders">
+
+                <div class="col-6 col-sm-3 placeholder" >
+                    <div class="col-6 col-sm-3 placeholder" id="Temp_chart" >
+
+                    </div>
+                    <canvas width=250 height=150 id="Temp-preview"></canvas>
+                    <h4>Temprature (°C)</h4>
+                    <div id="preview-textfield"></div>
+
+                </div>
+                <div class="col-6 col-sm-3 placeholder" >
+                    <div class="col-6 col-sm-3 placeholder" id="PH_chart" >
+
+                    </div>
+                    <canvas  width=250 height=150 id="PH-preview"></canvas>
+                    <h4>PH</h4>
+
+                    <div id="PH-textfield"></div>
+                </div>
+                <div class="col-6 col-sm-3 placeholder">
+                    <div class="col-6 col-sm-3 placeholder" id="Salinity_chart" >
+
+                    </div>
+                    <canvas  width=250 height=150 id="Sal-preview"></canvas>
+                    <h4>Salinity/Conductivity (uS/cm)</h4>
+
+                    <div id="Sal-textfield"></div>
+                </div>
+                <div class="col-6 col-sm-3 placeholder">
+                    <div class="col-6 col-sm-3 placeholder" id="DO_chart" > </div>
+                    <canvas  width=250 height=150 id="DO-preview"></canvas>
+                    <h4>Dissolved Oxygen</h4>
+
+                    <div id="DO-textfield"></div>
+                </div>
+
+                <span id="Device_2_data"></span>
+
+            </section>
+
+            <div id="TimeStamp_dev1" >
+                Last Updated:
+
+            </div>
+            <br>
+            <br>
+            <h1> Device 2 </h1>
+
+
+
+            <section class="row justify-content-center text-center placeholders">
+
+                <div class="col-6 col-sm-3 placeholder" >
+                    <div class="col-6 col-sm-3 placeholder" id="Temp_chart_d_2" >
+
+                    </div>
+                    <canvas width=250 height=150 id="Temp-preview-d-2"></canvas>
+                    <h4>Temprature (°C)</h4>
+                    <div id="preview-textfield-d-2"></div>
+
+                </div>
+                <span id="Device_3_data"></span>
+
+            </section>
+
+            <div id="TimeStamp_dev2" >
+                Last Updated:
+
+            </div>
+            <br>
+            <br>
+
+            <h1> Device 3</h1>
+
+            <section class="row justify-content-center text-center placeholders">
+
+                <div class="col-6 col-sm-3 placeholder" >
+                    <div class="col-6 col-sm-3 placeholder" id="Temp_chart_d_3" >
+
+                    </div>
+                    <canvas width=250 height=150 id="Temp-preview-d-3"></canvas>
+                    <h4>Temprature (°C)</h4>
+                    <div id="preview-textfield-d-3"></div>
+
+                </div>
+                <span id="Device_4_data"></span>
+
+            </section>
+            <div id="TimeStamp_dev3" >
+                Last Updated:
+
+            </div>
+            <br>
+            <br>
+
+            <h1> Device 4</h1>
+
+            <section class="row justify-content-center text-center placeholders">
+
+                <div class="col-6 col-sm-3 placeholder" >
+                    <div class="col-6 col-sm-3 placeholder " id="Temp_chart_d_4" >
+
+                    </div>
+                    <canvas width=250 height=150 id="Temp-preview-d-4"></canvas>
+                    <h4>Temprature (°C)</h4>
+                    <div id="preview-textfield-d-4"></div>
+
+                </div>
+
+            </section>
+
+            <div id="TimeStamp_dev4" >
+                Last Updated:
+
+            </div>
+            <br>
+            <br>
+
+        </main>
+    </div>
+</div>
+
+
+
+<script src="scripts/jquery-3.3.1.min.js"></script>
+<script src="/bootstrap-4-2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/fd-slider/fd-slider.js"></script>
+<script src="dist/gauge.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Info</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
+    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="scripts/Chart.bundle.js"></script>
+    <script type="text/javascript" src="scripts/Chart.bundle.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark justify-content-between">
+    <a class="navbar-brand" href="#">H<sub>2</sub>O Sense</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="Dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </ul>
+        <form class="form-inline mx-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="images/capacitor-chip-circuit-163100.jpg" height="400"  alt="First slide">
+    </div>
+    <div class="carousel-item">
+       <img class="d-block w-100" src="images/board-capacitors-chip-159220.jpg" height="400" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+       <img class="d-block w-100" src="images/action-blur-electronics-247932.jpg" height="400" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="container">
+    <br>
+    <p class="h3 text-center text-dark"> <b>Wireless Sensor Networks</b></p>
+    <p class="text-secondary">
+
+        Recent advancements in chip design have given birth to devices that have a considerable smaller energy footprint. Currently, a huge number of sensors are available that can operate for a long time on a limited battery resource.
+        This property of a low energy footprint of sensor makes them a great candidate for using them for autonomous monitoring.
+
+        Acquiring data individually from sensors can be a cumbersome task. To solve this problem of data collection, Wireless sensor networks come into play. In a Wireless Sensor Network, multiple sensor nodes that are spatially
+        distributed form a wireless network. These nodes, as their name suggests, contain multiple sensors. With the help of these sensor they gather the required data and then send them over to the data collection
+        node.
+
+
+
+    </p>
+    <p class=" font-italic text-secondary">
+        When multiple Sensor nodes connect together to form a network, the complete network is referred to as a <b>wireless sensor network</b>.
+    </p>
+
+    <p class="h4 text-center text-dark"> <b>How do wireless sensor networks operate?</b></p>
+    <p class="text-secondary">
+        Just like internet networks can be connected in form of various topologies, sensor netwroks also connect with each other in form of a certain topology.
+        Some examples of topologies are:
+        <dl class="row text-secondary">
+            <dt class="col-sm-3">Star Topology</dt>
+            <dd class="col-sm-9">All Nodes connected to a central node. Like the infrastucture topology in wifi </dd>
+
+            <dt class="col-sm-3">Tree Topology</dt>
+            <dd class="col-sm-9">All Nodes connected together to form a tree like topology.</dd>
+
+            <dt class="col-sm-3">Mesh or P2P Topology</dt>
+            <dd class="col-sm-9">All the nodes connect to their neighbouring nodes resulting a intertwined network </dd>
+
+
+    </dl>
+
+
+
+    </p>
+
+
+    <p class="text-secondary">
+        The number of nodes contained by a single network vary on the utility of the whole sensor network. A network may comprise of a few to as many as thousand nodes.
+
+        Due to their low energy footprint, these nodes (depending upon the energy consumption) are capable of working for a very long time. This also enables them to be deployed in areas that are hard to reach,
+        enabling data collection for a longer period of time with minimal human interaction.
+
+    </p>
+
+    <p class="h3 text-center text-dark"> About Our System</p>
+
+
+
+    <img src="images/Architecture.png" align="center" >
+     
+
+    <p class="h4 text-left text-dark"> Composition of the system: </p>
+    <p class="text-secondary">
+
+        <p class="h5 text-left text-dark"> Structure of Sending Nodes </p>
+    <br>
+        Using the WSNs as a backbone, we have created a system to help monitor and collect different water parameters which effect fishes in research environments. Our system consist of one main node which consists of
+    multiple probes attached to the WSNs through the serial interface which help it to collect the physical parameters related to water in which the probes are immersed.
+
+    Each of these probe, is capable of measuring a certain physical parameters of the water. Currently a ph, salinity and dissolved oxygen probe are attached to the WSN node. A temperature sensor is also attached to
+    the WSN mote which communicates with the mote using the one-wire protocol. The data is send periodically to the a sink node. The time difference between two successive data sharing events is based upon the interval of sleep time that
+    is programmed into the mote.
+
+    The system also consists of WSNs nodes that are only capable of monitoring the temperature of the water.
+
+    <p class="h5 text-left text-dark"> Sink Node </p>
+    All the data from the Nodes are collected with the help of a sink node which also displays all the data with the help of a local web based application. The sink is also capable of sending data to a remote server which allows the
+    data to be accessed from anywhere in the world.
+    <br>
+    The sink node comprises of a Raspberry pi with a LCD attached to it for the purpose of local data viewing. Th
+
+
+
+    </p>
+
+    <p class="h5 text-left text-dark"> Communication strategy within Nodes </p>
+    In order for the motes to send data wirelessly to the collecting node, there are is a RF transceiver on the mote. The motes work on 433Mhz which enables long distance communication enabling the sink to
+    located in locations where internet connectivity is available without compromising on data loss.
+
+    The Sensing motes are connected to the sink node using the simple star topology
+    </p>
+
+
+
+</div>
+
+
+<script src="scripts/jquery-3.3.1.min.js"></script>
+<script src="/bootstrap-4-2/js/bootstrap.min.js"></script>
+</body>
+</html>

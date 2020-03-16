@@ -1,0 +1,228 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 3.5rem;
+}
+
+/*
+ * Typography
+ */
+
+h1 {
+  padding-bottom: 9px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  border-right: 1px solid #eee;
+}
+
+.sidebar .nav {
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+  width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+  margin-left: 0;
+}
+
+.sidebar .nav-link {
+  border-radius: 0;
+}
+
+/*
+ * Dashboard
+ */
+
+/* Placeholders */
+.placeholders {
+  padding-bottom: 3rem;
+}
+
+.placeholder img {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+@media ( min-width : 768px) {
+	.navbar-nav {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	.navbar-nav .nav-item {
+		-webkit-box-flex: 1;
+		-webkit-flex: 1 0 auto;
+		-ms-flex: 1 0 auto;
+		flex: 1 0 auto;
+	}
+	}
+
+
+	/* ---------------------------------------------------------------------------------------------- */
+/* -----| GENERAL |------------------------------------------------------------------------------ */
+/* ---------------------------------------------------------------------------------------------- */
+
+body {
+    padding: 70px 0 0;
+}
+
+body.breadcrumb-fixed {
+    padding-top: 56px;
+}
+
+.container {
+    max-width: 960px;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* -----| HEADER |----------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#page-navbar .navbar-text {
+    display: block;
+    float: left;
+    font-family: 'Cutive Mono', monospace, serif;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------------------------------------------- */
+/* -----| DIRECTORY LISTER |--------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+
+#directory-list-header {
+    font-family: 'Cutive Mono', monospace, serif;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+#directory-listing {
+    font-family: 'Cutive Mono', monospace, serif;
+}
+
+#directory-listing li .mylist {
+    position: relative;
+}
+
+.file-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-name i {
+    color: #555;
+}
+
+.file-info-button,
+.web-link-button {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 100%;
+    padding: 6px 10px !important;
+    position: absolute !important;
+    top: 4px;
+}
+
+.web-link-button i,
+.file-info-button i {
+    color: #999;
+}
+
+
+/* ---------------------------------------------------------------------------------------------- */
+/* -----| FOOTER |------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+
+.footer {
+    margin: 20px;
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------------------------------------------- */
+/* -----| CHECKSUM MODAL |----------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+
+#file-info {
+    margin: 0;
+}
+
+#file-info .table-title {
+    font-weight: bold;
+    text-align: right;
+}
+
+#file-info .md5-hash,
+#file-info .sha1-hash {
+    font-family: 'Cutive Mono', monospace, serif;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* -----| RESPONSIVE |------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+
+    .navbar-nav {
+        float: left;
+        margin: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    .navbar-nav > li {
+        float: left;
+    }
+
+    .navbar-nav > li > a {
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+    .navbar-right {
+        float: right !important;
+    }
+
+    #page-navbar .navbar-text {
+        margin-left: 15px;
+        margin-right: 15px;
+        max-width: 75%;
+    }
+
+    .file-info-button {
+        display: none !important;
+    }
+
+}

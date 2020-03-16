@@ -1,0 +1,78 @@
+<form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="inputPeriod" class="">Data Collection Interval (minutes)</label>
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPeriod" class="sr-only">Period</label>
+    <input type="number" min="1" class="form-control" id="inputPeriod" placeholder="number">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2" onclick="Setinputperiod()"> Set</button>
+</form>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+      <div class="col col-sm-4">
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Data Collection Intervals (Minutes)
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Node 1:
+              <span class="badge badge-primary badge-pill" id="send_time_1">2</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Node 2:
+              <span class="badge badge-primary badge-pill" id="send_time_2">3</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Node 3:
+              <span class="badge badge-primary badge-pill" id="send_time_3">4</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Node 4:
+              <span class="badge badge-primary badge-pill" id="send_time_4">5</span>
+            </li>
+          </ul>
+      </div>
+
+    </div>
+</div>
+
+
+<form class="form-inline">
+
+
+<div class="form-group mb-2">
+    <label for="inputPeriod" class=""> Delete past data (Warning! This procedure is irreversible) </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary mb-2" onclick="Delete_all_data()"> Delete Past Data </button>
+</form>
+
+<form class="form-inline" onsubmit="return false">
+
+  <label class="my-1 mr-2" for="NodeSelection">Select Node</label>
+  <select class="custom-select my-1 mr-sm-2" id="NodeSelection" onchange="form_select()">
+
+    <option value="1" selected>Node 1</option>
+    <option value="2">Node 2</option>
+    <option value="3">Node 3</option>
+    <option value="4">Node 4</option>
+  </select>
+
+
+    <div class="custom-control custom-radio custom-control-inline">
+       <input type="radio" id="radio_settings1" name="radio_settings" class="custom-control-input"  onclick="" value="Tilapia" checked>
+       <label class="custom-control-label" for="radio_settings1">Tilapia </label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="radio_settings2" name="radio_settings" class="custom-control-input"  onclick="" value="Kob">
+      <label class="custom-control-label" for="radio_settings2">Kob</label>
+    </div>
+
+
+  <button type="submit" class="btn btn-primary my-1"  onclick="Set_gauge_opts()" id="exp_button">Set </button>
+</form>

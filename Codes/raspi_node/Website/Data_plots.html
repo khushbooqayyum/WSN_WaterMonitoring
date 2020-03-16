@@ -1,0 +1,43 @@
+<h1> Temprature Plot</h1>
+<div>
+    <canvas id="Data_plot" width="1000" height="500"></canvas>
+</div>
+<div id="Dataplot_dev1" >
+    Last Updated:
+
+</div>
+
+
+
+<form class="form-inline" onsubmit="return false">
+  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Node</label>
+  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onchange="form_select()">
+    <option selected>Choose...</option>
+    <option value="2">Node 1</option>3
+    <option value="3">Node 2</option>
+    <option value="4">Node 3</option>
+    <option value="5">Node 4</option>
+  </select>
+
+    <div class="custom-control custom-radio custom-control-inline">
+       <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" disabled onclick="radio_select()" value="temprature">
+       <label class="custom-control-label" for="customRadioInline1">Temprature </label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" disabled onclick="radio_select()" value="ph">
+      <label class="custom-control-label" for="customRadioInline2">PH</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" disabled onclick="radio_select()" value="dissolvedoxygen">
+      <label class="custom-control-label" for="customRadioInline3">Dissolved Oxygen</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input" disabled onclick="radio_select()" value="salinity">
+      <label class="custom-control-label" for="customRadioInline4">Salinity</label>
+    </div>
+
+  <button type="submit" class="btn btn-primary my-1" disabled onclick="Get_plot_data()" id="data_button">Get Data</button>
+</form>
+
+<br>
+<br>
